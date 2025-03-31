@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-primary: #ff7900;
+  --color-secondary: #001256;
+}
+
+@layer base {
+  @font-face {
+      font-family: 'Causten';
+      src: url("/fonts/Causten-Bold.otf") format("opentype");
+      font-weight: bold;
+  }
+  @font-face {
+    font-family: 'Causten';
+    src: url("/fonts/Causten-Light.otf") format("opentype");
+    font-weight: 200;
+}
+@font-face {
+  font-family: 'Causten';
+  src: url("/fonts/Causten-Regular.otf") format("opentype");
+  font-weight: normal;
+}
+}
+
+body {
+  font-family: 'Causten', 'OpenSans';
+  background-image: url('/images/Background.png');
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--color-secondary);
+  border-radius: 15px;
+  animation-duration: 3s
+}
