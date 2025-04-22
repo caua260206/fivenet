@@ -35,11 +35,11 @@ export default function Empresarial() {
     ]
 
     return (
-        <div className="xl:px-20 px-8 py-12 text-white">
-            <h2 className="text-4xl">As melhores ofertas para sua <b>empresa</b></h2>
-            <div className="bg-gradient-to-r from-primary to-transparent w-60 h-1 mt-4 mb-12"></div>
+        <div className="xl:px-20 px-8 py-12 text-white max-lg:text-center">
+            <h2 className="text-4xl max-lg:text-center">As melhores ofertas para sua <b>empresa</b></h2>
+            <div className="bg-gradient-to-r max-lg:hidden from-primary to-transparent w-60 h-1 mt-4 mb-12"></div>
 
-            <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex flex-col max-lg:mt-4 lg:flex-row items-center gap-10">
                 {/* Imagem */}
                 <div className="xl:w-1/2">
                     <img 
@@ -77,9 +77,11 @@ export default function Empresarial() {
                     </div>
 
                     {/* Botão */}
-                    <button className="bg-primary text-white font-bold py-3 px-6 rounded-md hover:bg-orange-500 transition">
-                        FALE AGORA COM UM CONSULTOR
-                    </button>
+                    <a href="https://api.whatsapp.com/send?phone=551141581928&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
+                        <button className="bg-primary text-white font-bold py-3 px-6 rounded-md hover:bg-orange-500 transition">
+                            FALE AGORA COM UM CONSULTOR
+                        </button>
+                    </a>
                 </div>
             </div>
 

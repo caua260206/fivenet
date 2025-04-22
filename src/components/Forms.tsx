@@ -3,11 +3,11 @@ import { Icon } from "@iconify/react";
 export default function Forms() {
     return (
         <div className="xl:px-20 px-8 py-20">
-            <div className="flex flex-col xl:flex-row items-start justify-between">
+            <div className="flex flex-col xl:flex-row items-start max-lg:items-center max-lg:justify-center max-lg:text-center justify-between">
                 <div className="xl:w-1/2">
                     <p className="text-4xl">Fale com um <b>Atendente</b></p>
-                    <div className="bg-gradient-to-r from-primary to-transparent w-60 h-1 mt-4"></div>
-                    <div className="mt-6">
+                    <div className="bg-gradient-to-r max-lg:hidden from-primary to-transparent w-60 h-1 mt-4"></div>
+                    <div className="mt-6 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:flex-col">
                         <div className="flex items-center">
                             <Icon icon="mdi:whatsapp" className="text-3xl mr-2" />
                             <p>(11) 4158-1928</p>
@@ -19,7 +19,7 @@ export default function Forms() {
                     </div>
                 </div>
 
-                <div className="xl:w-1/2 mt-8 xl:mt-0">
+                <div className="xl:w-1/2 w-full mt-8 xl:mt-0">
                     <form>
                         <div className="mb-4">
                             <input 
