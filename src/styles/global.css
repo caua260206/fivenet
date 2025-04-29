@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
   --color-primary: #ff7900;
@@ -9,20 +9,25 @@
 
 @layer base {
   @font-face {
-      font-family: 'Causten';
-      src: url("/fonts/Causten-Bold.otf") format("opentype");
-      font-weight: bold;
+    font-family: 'Causten';
+    src: url("/fonts/Causten-Bold.otf") format("opentype");
+    font-weight: bold;
   }
   @font-face {
     font-family: 'Causten';
     src: url("/fonts/Causten-Light.otf") format("opentype");
     font-weight: 200;
+  }
+  @font-face {
+    font-family: 'Causten';
+    src: url("/fonts/Causten-Regular.otf") format("opentype");
+    font-weight: normal;
+  }
 }
-@font-face {
-  font-family: 'Causten';
-  src: url("/fonts/Causten-Regular.otf") format("opentype");
-  font-weight: normal;
-}
+
+:root {
+  --color-primary: #ff7900;
+  --color-secondary: #001256;
 }
 
 body {
@@ -40,8 +45,8 @@ body {
   border-radius: 0px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: var(--color-secondary);
   border-radius: 15px;
-  animation-duration: 3s
+  animation-duration: 3s;
 }
