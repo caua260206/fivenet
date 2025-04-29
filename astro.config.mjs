@@ -1,25 +1,23 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from "@tailwindcss/vite";
 import react from '@astrojs/react';
-import cloudflare from '@astrojs/cloudflare';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    react()
-  ],
-  adapter: cloudflare(),
-  experimental: {
-    session: true, // Ativa a funcionalidade de sessão
-  },
-  output: 'server',
+  integrations: [react()],
   vite: {
-    plugins: [tailwindcss()],
-    resolve: {
-      alias: import.meta.env.PROD && {
-        "react-dom/server": "react-dom/server.edge",
-      },
+    ssr: {
+      noExternal: ['@radix-ui/react-accordion']
     },
-  },
+
+    resolve: {
+      alias: {
+        '@': process.env.NODE_ENV === 'production' ? '/src' : '/src'
+      }
+    },
+
+    plugins: [tailwindcss()]
+  }
 });
