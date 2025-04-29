@@ -1,6 +1,60 @@
+import { useState } from 'react';
 import { Icon } from "@iconify/react";
 
 export default function Forms() {
+    const [formData, setFormData] = useState({
+        nome: '',
+        email: '',
+        telefone: '',
+        cep: '',
+        mensagem: ''
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState({ type: '', text: '' });
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setMessage({ type: '', text: '' });
+
+        try {
+            const response = await fetch('/api/contato.json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setMessage({ type: 'success', text: 'Obrigado por entrar em contato! Em breve nossa equipe retornará sua mensagem.' });
+                setFormData({
+                    nome: '',
+                    email: '',
+                    telefone: '',
+                    cep: '',
+                    mensagem: ''
+                });
+            } else {
+                throw new Error(data.message || 'Erro ao enviar mensagem');
+            }
+        } catch (error) {
+            setMessage({ type: 'error', text: 'Desculpe, não foi possível enviar sua mensagem. Por favor, tente novamente.' });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }));
+    };
+
     return (
         <div className="xl:px-20 px-8 py-20">
             <div className="flex flex-col xl:flex-row items-start max-lg:items-center max-lg:justify-center max-lg:text-center justify-between">
@@ -20,43 +74,70 @@ export default function Forms() {
                 </div>
 
                 <div className="xl:w-1/2 w-full mt-8 xl:mt-0">
-                    <form>
-                        <div className="mb-4">
-                            <input 
-                                type="text" 
-                                placeholder="Nome" 
-                                className="w-full p-4 rounded-xl bg-white/20"
+                    <form onSubmit={handleSubmit} className="w-full max-w-7xl bg-secondary rounded-2xl p-10 flex flex-col items-center">
+                        <h2 className="text-3xl text-white font-bold mb-8 text-center">Entre em contato conosco!</h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                            <input
+                                type="text"
+                                name="nome"
+                                placeholder="Nome"
+                                className="text-black bg-white placeholder:text-black px-5 py-3 rounded-full"
+                                value={formData.nome}
+                                onChange={handleChange}
+                                required
                             />
-                        </div>
-                        <div className="mb-4">
-                            <input 
-                                type="email" 
-                                placeholder="E-mail" 
-                                className="w-full p-4 rounded-xl bg-white/20"
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="E-mail"
+                                className="text-black bg-white placeholder:text-black px-5 py-3 rounded-full"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
                             />
-                        </div>
-                        <div className="mb-4">
-                            <input 
-                                type="tel" 
-                                placeholder="Telefone" 
-                                className="w-full p-4 rounded-xl bg-white/20"
+                            <input
+                                type="tel"
+                                name="telefone"
+                                placeholder="Telefone"
+                                className="text-black bg-white placeholder:text-black px-5 py-3 rounded-full"
+                                value={formData.telefone}
+                                onChange={handleChange}
+                                required
                             />
-                        </div>
-                        <div className="mb-4">
-                            <textarea 
-                                placeholder="Escreva uma mensagem" 
-                                className="w-full p-4 rounded-xl bg-white/20" 
+                            <input
+                                type="text"
+                                name="cep"
+                                placeholder="CEP"
+                                className="text-black bg-white placeholder:text-black px-5 py-3 rounded-full"
+                                value={formData.cep}
+                                onChange={handleChange}
+                                required
                             />
                         </div>
 
-                        <div className="flex justify-end">
-                            <button 
-                                type="submit" 
-                                className="bg-primary text-white py-2 px-8 rounded-md"
-                            >
-                                Enviar Mensagem
-                            </button>
-                        </div>
+                        <textarea
+                            name="mensagem"
+                            placeholder="Mensagem"
+                            className="w-full text-black bg-white placeholder:text-black px-5 py-3 rounded-2xl mt-6 resize-none h-32"
+                            value={formData.mensagem}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        {message.text && (
+                            <div className={`mt-4 p-4 rounded-lg text-white text-center ${message.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}>
+                                {message.text}
+                            </div>
+                        )}
+
+                        <button
+                            type="submit"
+                            className="mt-10 bg-primary text-white font-bold py-3 px-10 rounded-md w-full max-w-md disabled:opacity-50"
+                            disabled={loading}
+                        >
+                            {loading ? 'Enviando...' : 'Enviar'}
+                        </button>
                     </form>
                 </div>
             </div>

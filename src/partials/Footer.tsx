@@ -7,7 +7,7 @@ export default function Footer() {
                 <div>
                     <p className="font-bold text-2xl">Quem somos?</p>
                     <p className="mt-3 mb-5">A NETCINTRA Telecom, autorizada pela ANATEL, foi fundada em 2008 para atender Vargem Grande Paulista e região. Estamos expandindo para as principais capitais do Brasil, oferecendo serviços de alta confiabilidade e satisfação. Contamos com mais de 2.500 provedores de conteúdo.</p>
-                    <a className="font-bold mt-5" href="#">Trabalhe conosco</a>
+                    <a className="font-bold mt-5 hover:text-orange-500 transition-colors" href="/trabalhe-conosco">Trabalhe conosco</a>
                 </div>
                 <div>
                     <img src="/images/Logo.png" alt="" />
