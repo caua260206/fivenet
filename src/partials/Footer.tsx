@@ -22,11 +22,11 @@ export default function Footer() {
                 </div>
                 <div>
                     <ul>
-                        <li><a href="/contratos/contrato-prestacao.pdf" target="_blank" rel="noopener noreferrer"></a>Contrato de prestação de serviços</li>
-                        <li><a href="/contratos/contrato-sva.pdf" target="_blank" rel="noopener noreferrer"></a>Regulamento SVA's</li>
-                        <li><a href="/contratos/contrato-termo1.pdf" target="_blank" rel="noopener noreferrer"></a>Termo de Concessão Condicional de Benefícios 1</li>
-                        <li><a href="/contratos/contrato-termo2.pdf" target="_blank" rel="noopener noreferrer"></a>Termo de Concessão Condicional de Benefícios 2</li>
-                        <li><a href="/contratos/contrato-termo3.pdf" target="_blank" rel="noopener noreferrer"></a>Termo de Concessão Condicional de Benefícios 3</li>
+                        <li><a href="/contratos/contrato-prestacao.pdf" target="_blank" rel="noopener noreferrer">Contrato de prestação de serviços</a></li>
+                        <li><a href="/contratos/contrato-sva.pdf" target="_blank" rel="noopener noreferrer">Regulamento SVA's</a></li>
+                        <li><a href="/contratos/contrato-termo1.pdf" target="_blank" rel="noopener noreferrer">Termo de Concessão Condicional de Benefícios 1</a></li>
+                        <li><a href="/contratos/contrato-termo2.pdf" target="_blank" rel="noopener noreferrer">Termo de Concessão Condicional de Benefícios 2</a></li>
+                        <li><a href="/contratos/contrato-termo3.pdf" target="_blank" rel="noopener noreferrer">Termo de Concessão Condicional de Benefícios 3</a></li>
                     </ul>
                 </div>
             </div>
