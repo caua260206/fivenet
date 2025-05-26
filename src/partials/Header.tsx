@@ -57,7 +57,7 @@ export default function Header() {
                         <li><a className="hover:text-primary duration-300" href="/">Home</a></li>
                         <li><a className="hover:text-primary duration-300" href="/planos-de-internet">Planos</a></li>
                         <li><a className="hover:text-primary duration-300" href="/para-sua-empresa">Para sua empresa</a></li>
-                        <li><a className="hover:text-primary duration-300" href="/projetos">Projetos</a></li>
+                        <li><a className="hover:text-primary duration-300" href="/sobre-nos">Sobre Nós</a></li>
                         <li><a className="hover:text-primary duration-300" href="https://sistema.netcintra.com.br/radiusnet/cda/login.php" target="_blank" rel="noopener noreferrer">Central do assinante</a></li>
                         <li><a className="hover:text-primary duration-300" href="/fale-conosco">Fale conosco</a></li>
                     </ul>
