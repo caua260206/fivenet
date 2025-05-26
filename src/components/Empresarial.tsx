@@ -77,7 +77,7 @@ export default function Empresarial() {
                     </div>
 
                     {/* Botão */}
-                    <a href="https://api.whatsapp.com/send?phone=551141581928&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
+                    <a href="https://api.whatsapp.com/send?phone=5511975358300&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
                         <button className="bg-primary text-white font-bold py-3 px-6 rounded-md hover:bg-orange-500 transition">
                             FALE AGORA COM UM CONSULTOR
                         </button>

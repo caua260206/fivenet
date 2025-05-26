@@ -59,11 +59,14 @@ export default function PlanosEmpresariais() {
                                 ))}
                             </ul>
 
-                            <button className="px-10 py-2 bg-[#008FDF] flex flex-row items-center gap-2 rounded-2xl mt-4">
-                                <Icon className="text-white" icon={`mdi:thunder-outline`} />
-                                Assine Rápido
-                            </button>
-                            <a href="https://api.whatsapp.com/send?phone=551141581928&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
+                            <a href="/assine-rapido-empresarial">
+    <button className="px-10 py-2 bg-[#008FDF] flex flex-row items-center gap-2 rounded-2xl mt-4">
+        <Icon className="text-white" icon={`mdi:thunder-outline`} />
+        Assine Rápido
+    </button>
+</a>
+
+                            <a href="https://api.whatsapp.com/send?phone=5511975358300&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
                                 <button className="px-10 py-2 bg-primary hover:bg-secondary duration-300 cursor-pointer flex flex-row items-center gap-2 rounded-2xl mt-4">
                                     Contratar
                                 </button>

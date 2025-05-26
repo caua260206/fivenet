@@ -3,13 +3,10 @@ import { useState } from 'react';
 export default function FormularioAssinatura() {
     const [formData, setFormData] = useState({
         nome: '',
-        dataNascimento: '',
         documento: '',
         rg: '',
         endereco: '',
         cep: '',
-        condominio: '',
-        complemento: '',
         telefone: '',
         email: '',
         dataVencimento: '',
@@ -41,13 +38,10 @@ export default function FormularioAssinatura() {
                 setMessage({ type: 'success', text: 'Obrigado pelo interesse! Em breve entraremos em contato para confirmar sua assinatura.' });
                 setFormData({
                     nome: '',
-                    dataNascimento: '',
                     documento: '',
                     rg: '',
                     endereco: '',
                     cep: '',
-                    condominio: '',
-                    complemento: '',
                     telefone: '',
                     email: '',
                     dataVencimento: '',
@@ -75,22 +69,18 @@ export default function FormularioAssinatura() {
     return (
         <div className="py-20 flex justify-center items-center">
             <form onSubmit={handleSubmit} className="w-full max-w-7xl bg-secondary rounded-2xl p-10 flex flex-col items-center">
-                <h2 className="text-3xl text-white font-bold mb-8 text-center">Preencha o formulário abaixo e assine agora!</h2>
+                <h2 className="text-3xl text-white font-bold mb-8 text-center">Formulário de Assinatura Empresarial</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                    <input type="text" name="nome" placeholder="Nome Completo" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.nome} onChange={handleChange} required />
-                    <input type="text" name="dataNascimento" placeholder="Data de Nascimento" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.dataNascimento} onChange={handleChange} required />
-                    <input type="text" name="documento" placeholder="CPF" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.documento} onChange={handleChange} required />
+                    <input type="text" name="nome" placeholder="Razão Social" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.nome} onChange={handleChange} required />
+                    <input type="text" name="documento" placeholder="CNPJ" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.documento} onChange={handleChange} required />
+                    <input type="text" name="rg" placeholder="Inscrição Estadual" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.rg} onChange={handleChange} required />
 
-                    <input type="text" name="rg" placeholder="RG" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.rg} onChange={handleChange} required />
                     <input type="text" name="endereco" placeholder="Endereço" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.endereco} onChange={handleChange} required />
                     <input type="text" name="cep" placeholder="CEP" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.cep} onChange={handleChange} required />
+                    <input type="tel" name="telefone" placeholder="Telefone Comercial" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.telefone} onChange={handleChange} required />
 
-                    <input type="text" name="condominio" placeholder="Condomínio" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.condominio} onChange={handleChange} />
-                    <input type="text" name="complemento" placeholder="Complemento" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.complemento} onChange={handleChange} />
-                    <input type="tel" name="telefone" placeholder="Telefone" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.telefone} onChange={handleChange} required />
-
-                    <input type="email" name="email" placeholder="E-mail" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.email} onChange={handleChange} required />
+                    <input type="email" name="email" placeholder="E-mail Corporativo" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.email} onChange={handleChange} required />
                     <input type="text" name="dataVencimento" placeholder="Data de Vencimento" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.dataVencimento} onChange={handleChange} required />
                     
                     <select name="plano" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.plano} onChange={handleChange} required>

@@ -10,7 +10,7 @@ export default function Header() {
             {/* Top bar */}
             <div className="flex flex-col max-lg:hidden md:flex-row items-center justify-between bg-gradient-to-r from-[#001158] to-[#00259D] xl:px-20 px-8 py-3 gap-2 text-center md:text-left">
                 <div>
-                    <a className="flex flex-row items-center gap-2 justify-center md:justify-start" href="https://api.whatsapp.com/send?phone=551141581928&text=Ol%C3%A1!%20Vim%20do%20site">
+                    <a className="flex flex-row items-center gap-2 justify-center md:justify-start" href="https://api.whatsapp.com/send?phone=5511975358300&text=Ol%C3%A1!%20Vim%20do%20site">
                         <Icon icon="mdi:phone-check" fontSize={20} className="text-white" />
                         <span className="text-white">(11) 4158-1928</span>
                     </a>
@@ -63,14 +63,14 @@ export default function Header() {
                     </ul>
 
                     {/* Botão "ASSINE JÁ" dentro do menu */}
-                    <a href="https://api.whatsapp.com/send?phone=551141581928&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer" className="md:hidden mt-4">
+                    <a href="https://api.whatsapp.com/send?phone=5511975358300&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer" className="md:hidden mt-4">
                         <button className="bg-primary hover:-translate-y-1 duration-300 hover:bg-secondary text-white py-3 px-10 rounded-xl font-bold">ASSINE JÁ</button>
                     </a>
                 </nav>
 
                 {/* Botão "ASSINE JÁ" desktop (fora do menu) */}
                 <div className="hidden md:block">
-                    <a href="https://api.whatsapp.com/send?phone=551141581928&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
+                    <a href="https://api.whatsapp.com/send?phone=5511975358300&text=Ol%C3%A1!%20Vim%20do%20site" target="_blank" rel="noopener noreferrer">
                         <button className="bg-primary hover:-translate-y-1 duration-300 text-white py-3 px-12 rounded-xl font-bold">ASSINE JÁ</button>
                     </a>
                 </div>

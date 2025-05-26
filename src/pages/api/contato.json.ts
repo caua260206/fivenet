@@ -7,7 +7,7 @@ export const POST: APIRoute = async ({ params, request }) => {
 
     const emailData = {
         "from": "'Formulário | Netcintra' <site@delipe.com>",
-        "email": "delivery.comercial@netcintra.com.br",
+        "email": ["delivery.comercial@netcintra.com.br", "pedido.site@netcintra.com.br"],
         "subject": "Nova Mensagem de Contato | Site",
         "text": `
             Nome: ${body.nome}
