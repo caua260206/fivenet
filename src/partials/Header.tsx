@@ -76,6 +76,22 @@ export default function Header() {
                 </div>
 
             </div>
+
+            {/* Botão Flutuante do WhatsApp */}
+            <a
+  href="https://api.whatsapp.com/send?phone=5511975358300&text=Ol%C3%A1!%20Vim%20do%20site"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg z-[9999] animate-bounce flex justify-center items-center"
+>
+  <img
+    src="/images/whatsapp.svg"
+    alt="WhatsApp"
+    className="w-11 h-10 object-contain -mr-0.5"
+  />
+</a>
+
+
         </div>
     );
 }
