@@ -134,7 +134,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                             <li
                                 key={idx}
                                 onClick={() => handleBenefitClick(beneficio)}
-                                className="flex flex-row items-center gap-3 text-sm text-white cursor-pointer hover:underline"
+className="flex flex-row items-center gap-3 text-sm text-white cursor-pointer underline"
                             >
                                 {beneficio.imagePath ? (
                                     <img src={beneficio.imagePath} alt={beneficio.text} className="h-9 w-9 rounded-full bg-[#FF6600] p-2 object-contain" />
