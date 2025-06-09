@@ -51,7 +51,7 @@ export default function Cobertura() {
     };
 
     return (
-        <div className="bg-secondary py-20">
+        <div className="bg-secondary pt-10 pb-16">
             <div className="text-center">
                 <h2 className="text-4xl font-bold">Verifique a cobertura em sua região</h2>
                 <p className="mt-4">Preencha os campos abaixo e descubra se a Netcintra está disponível em sua região.</p>
