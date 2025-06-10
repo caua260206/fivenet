@@ -9,7 +9,33 @@ A ONG já contava com as operadoras Sumicity, Telecall, Ligue Telecom, SOW, NetC
 A NetCintra Telecom passou a conectar gratuitamente doze escolas na cidade de Vargem Grande Paulista (SP). A ação teve início em janeiro, antes do anúncio oficial, e terá uma duração de três anos, com impacto para mais de 7 mil alunos.`,
             image: "/images/escola-conectada.png",
             reverse: false,
-        }
+        },
+        // PROJETO ADICIONADO: São Roque
+        {
+            title: 'Projeto Internet para São Roque',
+            text: `Agosto de 2017
+
+A provedora de banda larga NetCintra Telecom anunciou parceria com a Prefeitura da Estância Turística de São Roque. A parceria consiste em ceder a Torre da Pedreira e disponibilizar internet a pontos sem infraestrutura, como os bairros de Mailasqui, Canguera, Caetê e Jardim Maria Trindade, com atendimento para escolas e postos de saúde.
+
+A NetCintra Telecom atendeu cerca de dezoito pontos, beneficiando diretamente os munícipes dessas regiões.
+
+Fonte: Prefeitura da Estância Turística de São Roque`,
+            image: "/images/sao_roque.png",
+            reverse: true,
+        },
+        // PROJETO ADICIONADO: Ibiúna
+        {
+            title: 'Projeto Internet para Ibiúna',
+            text: `Maio de 2015
+
+A provedora de banda larga NetCintra Telecom anunciou parceria com a Prefeitura da Estância Turística de Ibiúna. A parceria consiste em ceder a Torre da Figueira e disponibilizar internet a pontos sem infraestrutura, como os bairros Centro, Jardim Europa, Cachoeira, Tavares, Feital e Curral, com atendimento para pontos como a Prefeitura e o CRAS.
+
+A NetCintra Telecom atende aos bairros entregando conexão banda larga diretamente aos munícipes dessas regiões.
+
+Fonte: Prefeitura da Estância Turística de Ibiúna`,
+            image: "/images/ibiuna.png",
+            reverse: false,
+        },
     ];
 
     return (

@@ -36,7 +36,7 @@ export default function PlanosResidenciais() {
             value: "99,90",
             beneficios: [
                 { icon: "mdi:wifi", text: "Super Wi-Fi", imagePath: "/images/wifi.svg" },
-                { icon: "mdi:television", text: "TV Watch Up-Cinema", imagePath: "/images/tv.svg" },
+                { icon: "mdi:television", text: "TV WATCH Pacote UP-CINEMA", imagePath: "/images/tv.svg" },
                 { icon: "mdi:netflix", text: "HBO Max por mais R$15,00", imagePath: "/images/max.png" },
             ],
         },
@@ -55,7 +55,7 @@ export default function PlanosResidenciais() {
             value: "139,90",
             beneficios: [
                 { icon: "mdi:wifi", text: "Super Wi-Fi 6", imagePath: "/images/wifi.svg" },
-                { icon: "mdi:television", text: "TV Watch Up-Cinema", imagePath: "/images/tv.svg" },
+                { icon: "mdi:television", text: "TV WATCH Pacote HUB Cinema", imagePath: "/images/tv.svg" },
             ],
         },
         {
@@ -72,7 +72,7 @@ export default function PlanosResidenciais() {
             value: "169,90",
             beneficios: [
                 { icon: "mdi:wifi", text: "Super Wi-Fi 6", imagePath: "/images/wifi.svg" },
-                { icon: "mdi:television", text: "TV Watch Up-Cinema", imagePath: "/images/tv.svg" },
+                { icon: "mdi:television", text: "TV WATCH Pacote HUB Cinema", imagePath: "/images/tv.svg" },
                 { icon: "mdi:netflix", text: "HBO Max por mais R$15,00", imagePath: "/images/max.png" },
             ],
         },
@@ -91,13 +91,17 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
     const [modalContent, setModalContent] = useState<{ text?: string; image?: string } | null>(null);
 
     const handleBenefitClick = (beneficio: Beneficio) => {
-        if (beneficio.text === "TV Watch Up-Cinema") {
-            setModalContent({ image: "/images/Hub.png" });
+        // Altera para exibir apenas a imagem para o benefício UP-CINEMA
+        if (beneficio.text === "TV WATCH Pacote UP-CINEMA") {
+            setModalContent({ image: "/images/upcinema.png" }); // Caminho da imagem específica para UP-CINEMA
+        } else if (beneficio.text === "TV WATCH Pacote HUB Cinema") {
+            // Alterado: Agora também exibe uma imagem para HUB Cinema
+            setModalContent({ image: "/images/hubcinema.png" }); // Caminho da imagem específica para HUB Cinema
         } else {
             const info: { [key: string]: string } = {
                 "Super Wi-Fi": "O Super Wi-Fi oferece um roteador de última geração com tecnologia avançada de distribuição de sinal, garantindo cobertura completa em todos os cômodos da sua residência. Ideal para múltiplos dispositivos conectados ao mesmo tempo, sem quedas de conexão ou perda de velocidade.",
                 "Super Wi-Fi 6": "Com o Super Wi-Fi 6, você terá acesso à tecnologia mais moderna em redes sem fio, com maior velocidade de transferência de dados, menor latência e mais estabilidade mesmo em ambientes com muitos dispositivos conectados simultaneamente. Perfeito para casas inteligentes e gamers exigentes.",
-                "HBO Max por mais R$15,00": "Tenha acesso ao catálogo completo da HBO Max com um acréscimo de apenas R$15,00 por mês. Aproveite filmes recentes, séries exclusivas, conteúdo infantil e documentários renomados em uma das plataformas de streaming mais populares do mundo.",
+                "HBO Max por mais R$15,00": "Tenha acesso ao catálogo completo da HBO Max com um acréscimo de apenas R$15,00 por mês. Aproveite filmes recentes, séries exclusivas, conteúdo infantil e documentários renomeados em uma das plataformas de streaming mais populares do mundo.",
             };
             setModalContent({ text: info[beneficio.text] || "Mais informações em breve." });
         }
@@ -134,7 +138,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                             <li
                                 key={idx}
                                 onClick={() => handleBenefitClick(beneficio)}
-className="flex flex-row items-center gap-3 text-sm text-white cursor-pointer underline"
+                                className="flex flex-row items-center gap-3 text-sm text-white cursor-pointer underline"
                             >
                                 {beneficio.imagePath ? (
                                     <img src={beneficio.imagePath} alt={beneficio.text} className="h-9 w-9 rounded-full bg-[#FF6600] p-2 object-contain" />
@@ -171,11 +175,11 @@ className="flex flex-row items-center gap-3 text-sm text-white cursor-pointer un
                 <div onClick={closeModal} className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
                     <div
                         onClick={(e) => e.stopPropagation()}
-                        className={`relative ${modalContent.image ? "bg-black p-0" : "bg-[#001256] p-6"} rounded-xl max-w-md w-full text-center`}
+                        className={`relative ${modalContent.image && !modalContent.text ? "bg-black p-0" : "bg-[#001256] p-6"} rounded-xl max-w-md w-full text-center`}
                     >
                         <button
                             onClick={closeModal}
-                            className={`absolute top-3 right-5 text-2xl font-bold ${modalContent.image ? "text-white" : "text-black"}`}
+                            className={`absolute top-3 right-5 text-2xl font-bold text-white`}
                         >
                             ×
                         </button>
