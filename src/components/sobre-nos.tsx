@@ -12,7 +12,7 @@ A NetCintra Telecom passou a conectar gratuitamente doze escolas na cidade de Va
         },
         // PROJETO ADICIONADO: São Roque
         {
-            title: 'Projeto Internet para São Roque',
+            title: 'Internet para São Roque',
             text: `Agosto de 2017
 
 A provedora de banda larga NetCintra Telecom anunciou parceria com a Prefeitura da Estância Turística de São Roque. A parceria consiste em ceder a Torre da Pedreira e disponibilizar internet a pontos sem infraestrutura, como os bairros de Mailasqui, Canguera, Caetê e Jardim Maria Trindade, com atendimento para escolas e postos de saúde.
@@ -25,7 +25,7 @@ Fonte: Prefeitura da Estância Turística de São Roque`,
         },
         // PROJETO ADICIONADO: Ibiúna
         {
-            title: 'Projeto Internet para Ibiúna',
+            title: 'Internet para Ibiúna',
             text: `Maio de 2015
 
 A provedora de banda larga NetCintra Telecom anunciou parceria com a Prefeitura da Estância Turística de Ibiúna. A parceria consiste em ceder a Torre da Figueira e disponibilizar internet a pontos sem infraestrutura, como os bairros Centro, Jardim Europa, Cachoeira, Tavares, Feital e Curral, com atendimento para pontos como a Prefeitura e o CRAS.
