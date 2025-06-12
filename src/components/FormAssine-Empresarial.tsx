@@ -10,7 +10,7 @@ export default function FormularioAssinatura() {
         telefone: '',
         email: '',
         dataVencimento: '',
-        plano: '',
+        plano: '', // Esta será a alterada
         dataInstalacao: '',
         periodoInstalacao: ''
     });
@@ -84,12 +84,13 @@ export default function FormularioAssinatura() {
                     <input type="text" name="dataVencimento" placeholder="Data de Vencimento" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.dataVencimento} onChange={handleChange} required />
                     
                     <select name="plano" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.plano} onChange={handleChange} required>
-                        <option value="">Selecione o plano de seu interesse</option>
-                        <option value="Só Internet">Só Internet</option>
-                        <option value="Internet + Combo com TV">Internet + Combo com TV</option>
-                        <option value="Internet + Combo com TV e Streaming">Internet + Combo com TV e Streaming</option>
-                        <option value="Solução de Cobertura WI-FI com Extensores Mesh">Solução de Cobertura WI-FI com Extensores Mesh</option>
-                        <option value="Quero uma solução que atenda as minhas necessidades">Quero uma solução que atenda as minhas necessidades</option>
+                        <option value="">Selecione a solução de seu interesse</option> {/* Texto do placeholder atualizado */}
+                        <option value="Internet para Empresa">Internet para Empresa</option>
+                        <option value="Internet Emp. + Combo">Internet Emp. + Combo</option>
+                        <option value="Solução de Cobertura de Wi-Fi">Solução de Cobertura de Wi-Fi</option>
+                        <option value="Solução de Câmera (Comum, Facial e/ou Placa)">Solução de Câmera (Comum, Facial e/ou Placa)</option>
+                        <option value="Soluções para Condomínio">Soluções para Condomínio</option>
+                        <option value="Quero conversar com um analista para entender minhas necessidades">Quero conversar com um analista para entender minhas necessidades</option>
                     </select>
 
                     <input type="text" name="dataInstalacao" placeholder="Data para instalação" className="input-form text-black bg-white placeholder:text-black px-5 py-3 rounded-full" value={formData.dataInstalacao} onChange={handleChange} required />
