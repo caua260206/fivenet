@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 export const POST: APIRoute = async ({ params, request }) => {
     const body = await request.json();
 
-    const url = 'https://delipe-mail-907e570e0648.herokuapp.com/send-mail';
+    const url = 'https://n8n-delipe-n8n.mogwag.easypanel.host/webhook/api/email-json';
 
     const emailData = {
         "from": "'Formulário | Netcintra' <site@delipe.com>",
