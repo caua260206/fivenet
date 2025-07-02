@@ -29,10 +29,6 @@ export const POST: APIRoute = async ({ params, request }) => {
             body: JSON.stringify(emailData)
         });
 
-        if (!response.ok) {
-            throw new Error('Erro ao enviar e-mail');
-        }
-
         const data = await response.json();
         console.log('Email enviado:', data);
 
