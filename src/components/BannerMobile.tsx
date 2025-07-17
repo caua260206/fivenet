@@ -9,6 +9,7 @@ export default function BannerHome() {
         "/banners/NewBannerMobile2.png",
         "/banners/NewBannerMobile3.png",
         "/banners/NewBannerMobile4.png",
+        "/banners/NewBannerMobile5.png",
     ];
 
     return (

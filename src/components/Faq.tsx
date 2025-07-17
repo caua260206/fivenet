@@ -26,7 +26,7 @@ export default function FaqSection() {
         {/* Lado esquerdo - Texto + FAQ */}
         <div className="flex-1">
           <div className="text-primary font-medium uppercase mb-2 flex items-center gap-2">
-            <div className="w-10 h-[2px] bg-primary"></div> FAQ
+            <div className="w-10 h-1 bg-primary"></div> FAQ
           </div>
           <h2 className="text-4xl font-bold mb-10">
             Tire suas dúvidas sobre a <span className="text-white">Net Cintra</span>
@@ -47,7 +47,7 @@ export default function FaqSection() {
           <img 
             src="/images/faq.png" 
             alt="Personagem FAQ" 
-            className="max-w-md"
+            className="max-w-md max-lg:w-full"
           />
         </div>
       </div>
