@@ -30,7 +30,7 @@ export default function Planos() {
             </div>
 
             <div className="mt-12 space-y-4">
-                <p>*Somos parceiros da Watch Brasil®, líder em entretenimento digital. Para aproveitar a Watch TV e outras plataformas incluídas nos pacotes, como Paramount+ e HBO MAX, é importante garantir que seu dispositivo (TV ou celular) seja compatível com o aplicativo.*</p>
+                <p>*Somos parceiros da Watch Brasil®, líder em entretenimento digital. Para desfrutar da Watch TV e aplicações disponibilizadas nos Pacotes como Paramount+ e HBO MAX, certifique-se de que seu dispositivo (TV ou Celular) seja compatível com o aplicativo. Canais locais sugeitos a disponibilidade de cobertura.*</p>
                 <p>*Canais locais estão sujeitos à disponibilidade de cobertura. Alguns canais poderão ser substituídos ou suspensos por questões de ordem técnica e/ou comercial junto às programadoras, e os clientes serão previamente informados.*</p>
                 <p>*Consulte condições, planos, pacotes e viabilidade técnica.*</p>
             </div>

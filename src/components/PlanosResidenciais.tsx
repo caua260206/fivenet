@@ -45,17 +45,17 @@ export default function PlanosResidenciais() {
             name: "Plano Ultra",
             speed: "600",
             apps: [
-                { image: "/images/Hbo.png" },
                 { image: "/images/Telecine.png" },
                 { image: "/images/SportTv.png" },
                 { image: "/images/Multishow.png" },
                 { image: "/images/Globo.png" },
                 { image: "/images/Gnt.png" },
             ],
-            value: "139,90",
+            value: "119,90",
             beneficios: [
                 { icon: "mdi:wifi", text: "Super Wi-Fi 6", imagePath: "/images/wifi.svg" },
-                { icon: "mdi:television", text: "TV WATCH Pacote HUB Cinema", imagePath: "/images/tv.svg" },
+                { icon: "mdi:television", text: "TV WATCH Pacote HUB Sports", imagePath: "/images/tv.svg" },
+                { icon: "mdi:netflix", text: "HBO Max por mais R$15,00", imagePath: "/images/max.png" }, // Adicionado aqui
             ],
         },
         {
@@ -91,12 +91,12 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
     const [modalContent, setModalContent] = useState<{ text?: string; image?: string } | null>(null);
 
     const handleBenefitClick = (beneficio: Beneficio) => {
-        // Altera para exibir apenas a imagem para o benefício UP-CINEMA
         if (beneficio.text === "TV WATCH Pacote UP-CINEMA") {
-            setModalContent({ image: "/images/upcinema.png" }); // Caminho da imagem específica para UP-CINEMA
+            setModalContent({ image: "/images/upcinema.png" });
         } else if (beneficio.text === "TV WATCH Pacote HUB Cinema") {
-            // Alterado: Agora também exibe uma imagem para HUB Cinema
-            setModalContent({ image: "/images/hubcinema.png" }); // Caminho da imagem específica para HUB Cinema
+            setModalContent({ image: "/images/hubcinema.png" });
+        } else if (beneficio.text === "TV WATCH Pacote HUB Sports") {
+            setModalContent({ image: "/images/hubsports.png" });
         } else {
             const info: { [key: string]: string } = {
                 "Super Wi-Fi": "O Super Wi-Fi oferece um roteador de última geração com tecnologia avançada de distribuição de sinal, garantindo cobertura completa em todos os cômodos da sua residência. Ideal para múltiplos dispositivos conectados ao mesmo tempo, sem quedas de conexão ou perda de velocidade.",
@@ -109,8 +109,8 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
 
     const closeModal = () => setModalContent(null);
 
-    const getWhatsAppMessage = () =>
-        encodeURIComponent(`Olá! Vim do site e tenho interesse no plano de ${planoBase.speed}mega`);
+    const getWhatsAppMessage = (speed: string) =>
+        encodeURIComponent(`Olá! Vim do site e tenho interesse no plano de ${speed} mega`);
 
     return (
         <>
@@ -124,7 +124,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                     <p className="text-[#FF6600] font-bold text-4xl mt-2">
                         <span className="text-6xl text-white">{planoBase.speed}</span>mega
                     </p>
-                    <p className="mt-4 text-white">Seu plano acompanha com:</p>
+                    <p className="mt-4 text-white">Seu plano acompanha com</p>
                     <div className="mt-4 flex flex-row items-center gap-2">
                         <img className="h-8" src="/images/maisplanos.svg" alt="Mais planos" />
                         {planoBase.apps.map((app, idx) => (
@@ -155,7 +155,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                     </p>
 
                     <div className="flex justify-center items-center my-6">
-                        <a href={`https://api.whatsapp.com/send?phone=5511975358300&text=${getWhatsAppMessage()}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`https://api.whatsapp.com/send?phone=5511975358300&text=${getWhatsAppMessage(planoBase.speed)}`} target="_blank" rel="noopener noreferrer">
                             <button className="bg-[#FF6600] hover:bg-[#001256] duration-300 text-1xl flex flex-row items-center py-3 px-10 gap-3 rounded-full text-white font-bold">
                                 <img src="/images/energia.svg" alt="Energia" className="h-6 w-6" />
                                 Quero ser Netcinta!
@@ -164,8 +164,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                     </div>
 
                     <p className="text-center font-light text-sm text-white -mt-3 leading-tight">
-                        Consulte condições e viabilidade* <br />
-                        Paramount por 1 ano grátis
+                        Consulte condições e viabilidade <br />Paramount por 1 ano grátis
                     </p>
                 </div>
             </div>
