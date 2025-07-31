@@ -9,7 +9,7 @@ export default function BannerHome() {
         "/banners/NewBanner2.png",
         "/banners/NewBanner3.png",
         "/banners/NewBanner4.png",
-        "/banners/NewBanner5.png",
+        // "/banners/NewBanner5.png",
     ];
 
     return (
