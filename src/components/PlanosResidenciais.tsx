@@ -45,7 +45,6 @@ export default function PlanosResidenciais() {
             name: "Plano Ultra",
             speed: "600",
             apps: [
-                { image: "/images/Telecine.png" },
                 { image: "/images/SportTv.png" },
                 { image: "/images/Multishow.png" },
                 { image: "/images/Globo.png" },
@@ -63,7 +62,6 @@ export default function PlanosResidenciais() {
             name: "Plano Ultra",
             speed: "1000",
             apps: [
-                { image: "/images/Telecine.png" },
                 { image: "/images/SportTv.png" },
                 { image: "/images/Multishow.png" },
                 { image: "/images/Globo.png" },
@@ -164,7 +162,12 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                     </div>
 
                     <p className="text-center font-light text-sm text-white -mt-3 leading-tight">
-                        Consulte condições e viabilidade <br />Paramount por 1 ano grátis
+                        Consulte condições e viabilidade
+                        {planoBase.speed === "500" && (
+                            <>
+                                <br />Paramount por 1 ano grátis
+                            </>
+                        )}
                     </p>
                 </div>
             </div>
