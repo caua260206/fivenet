@@ -54,7 +54,7 @@ export default function PlanosResidenciais() {
             beneficios: [
                 { icon: "mdi:wifi", text: "Super Wi-Fi 6", imagePath: "/images/wifi.svg" },
                 { icon: "mdi:television", text: "TV WATCH Pacote HUB Sports", imagePath: "/images/tv.svg" },
-                { icon: "mdi:netflix", text: "HBO Max por mais R$15,00", imagePath: "/images/max.png" }, // Adicionado aqui
+                { icon: "mdi:netflix", text: "HBO Max por mais R$15,00", imagePath: "/images/max.png" },
             ],
         },
         {
@@ -101,7 +101,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                 "Super Wi-Fi 6": "Com o Super Wi-Fi 6, você terá acesso à tecnologia mais moderna em redes sem fio, com maior velocidade de transferência de dados, menor latência e mais estabilidade mesmo em ambientes com muitos dispositivos conectados simultaneamente. Perfeito para casas inteligentes e gamers exigentes.",
                 "HBO Max por mais R$15,00": "Tenha acesso ao catálogo completo da HBO Max com um acréscimo de apenas R$15,00 por mês. Aproveite filmes recentes, séries exclusivas, conteúdo infantil e documentários renomeados em uma das plataformas de streaming mais populares do mundo.",
             };
-            setModalContent({ text: info[beneficio.text] || "Mais informações em breve." });
+            setModalContent({ text: info[(beneficio.text as keyof typeof info)] || "Mais informações em breve." });
         }
     };
 
@@ -110,13 +110,28 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
     const getWhatsAppMessage = (speed: string) =>
         encodeURIComponent(`Olá! Vim do site e tenho interesse no plano de ${speed} mega`);
 
+    const cardBgColor = planoBase.speed === "500" ? "bg-[#ff6600]" : "bg-[#4605bc]";
+    const cardBorderHover = planoBase.speed === "500" ? "hover:border-[#4605bc]" : "hover:border-[#FF6600]";
+    const cornerBgHover = planoBase.speed === "500" ? "group-hover:bg-[#4605bc]" : "group-hover:bg-[#FF6600]";
+    const cornerTextHover = planoBase.speed === "500" ? "group-hover:text-white" : "";
+    const buttonBgColor = planoBase.speed === "500" ? "bg-[#4605bc]" : "bg-[#FF6600]";
+    const appsImage = planoBase.speed === "500" ? "/images/maisplano.svg" : "/images/maisplanos.svg";
+    const iconBgColor = planoBase.speed === "500" ? "bg-[#4605bc]" : "bg-[#FF6600]";
+
     return (
         <>
             <div className="flex justify-center">
-                <div className="w-[22rem] px-8 border-2 hover:-translate-y-1 hover:duration-500 group hover:border-[#FF6600] duration-600 py-7 flex flex-col bg-[#4605bc] border-white relative rounded-3xl">
-                    <div className="bg-white py-2 group-hover:bg-[#FF6600] duration-500 absolute right-0 top-0 rounded-tr-2xl rounded-bl-3xl px-6">
-                        <p className="text-[#4605bc] uppercase font-bold text-sm">100% Fibra Óptica</p>
-                    </div>
+                <div className={`w-[22rem] px-8 border-2 hover:-translate-y-1 hover:duration-500 group ${cardBorderHover} duration-600 py-7 flex flex-col ${cardBgColor} border-white relative rounded-3xl`}>
+                    {planoBase.speed === "500" && (
+                        <div className={`bg-white py-2 ${cornerBgHover} duration-500 absolute right-0 top-0 rounded-tr-2xl rounded-bl-3xl px-6`}>
+                            <p className={`text-[#4605bc] uppercase font-bold text-sm ${cornerTextHover}`}>ESPECIAL MÊS DOS PAIS</p>
+                        </div>
+                    )}
+                    {planoBase.speed !== "500" && (
+                        <div className={`bg-white py-2 ${cornerBgHover} duration-500 absolute right-0 top-0 rounded-tr-2xl rounded-bl-3xl px-6`}>
+                            <p className={`text-[#4605bc] uppercase font-bold text-sm ${cornerTextHover}`}>100% Fibra Óptica</p>
+                        </div>
+                    )}
 
                     <p className="font-bold text-white text-2xl max-lg:mt-7">{planoBase.name}</p>
                     <p className="text-[#FF6600] font-bold text-4xl mt-2">
@@ -124,7 +139,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                     </p>
                     <p className="mt-4 text-white">Seu plano acompanha com</p>
                     <div className="mt-4 flex flex-row items-center gap-2">
-                        <img className="h-8" src="/images/maisplanos.svg" alt="Mais planos" />
+                        <img className="h-8" src={appsImage} alt="Mais planos" />
                         {planoBase.apps.map((app, idx) => (
                             <img key={idx} className="h-9" src={app.image} alt="App" />
                         ))}
@@ -139,9 +154,9 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
                                 className="flex flex-row items-center gap-3 text-sm text-white cursor-pointer underline"
                             >
                                 {beneficio.imagePath ? (
-                                    <img src={beneficio.imagePath} alt={beneficio.text} className="h-9 w-9 rounded-full bg-[#FF6600] p-2 object-contain" />
+                                    <img src={beneficio.imagePath} alt={beneficio.text} className={`h-9 w-9 rounded-full ${iconBgColor} p-2 object-contain`} />
                                 ) : (
-                                    <Icon icon={beneficio.icon} fontSize={22} className="bg-[#FF6600] text-[#17004a] h-9 w-9 p-2 rounded-full object-contain" />
+                                    <Icon icon={beneficio.icon} fontSize={22} className={`${iconBgColor} text-[#17004a] h-9 w-9 p-2 rounded-full object-contain`} />
                                 )}
                                 {beneficio.text}
                             </li>
@@ -154,7 +169,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
 
                     <div className="flex justify-center items-center my-6">
                         <a href={`https://api.whatsapp.com/send?phone=5511975358300&text=${getWhatsAppMessage(planoBase.speed)}`} target="_blank" rel="noopener noreferrer">
-                            <button className="bg-[#FF6600] hover:bg-[#001256] duration-300 text-1xl flex flex-row items-center py-3 px-10 gap-3 rounded-full text-white font-bold">
+                            <button className={`${buttonBgColor} hover:bg-[#001256] duration-300 text-1xl flex flex-row items-center py-3 px-10 gap-3 rounded-full text-white font-bold`}>
                                 <img src="/images/energia.svg" alt="Energia" className="h-6 w-6" />
                                 Quero ser Netcinta!
                             </button>
