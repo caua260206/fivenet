@@ -14,9 +14,9 @@ import PlanosEmpresariais from '@/components/PlanosEmpresariais';
 
 <Layout>
 
-	<div class="py-20 xl:px-20 px-8">
+	<div class="py-10 xl:px-20 px-8">
         <p class="text-center text-4xl text-primary">Os melhores serviços para sua empresa</p>
-        <p class="text-center text-white mt-3">Descubra soluções personalizadas e de alta qualidade. Conte com opções ideais para atender às demandas do seu negócio.</p>
+        <p class="text-center text-white mt-3 max-lg:-mb-7">Descubra soluções personalizadas e de alta qualidade. Conte com opções ideais para atender às demandas do seu negócio.</p>
 
         <div>
             <PlanosEmpresariais client:only />
@@ -30,6 +30,6 @@ import PlanosEmpresariais from '@/components/PlanosEmpresariais';
         <Faq />
     </div>
 
-    <Forms />
+	<Forms client:only />	
 
 </Layout>
