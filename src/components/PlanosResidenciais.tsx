@@ -23,7 +23,7 @@ interface PlanoBase {
 export default function PlanosResidenciais() {
   const planosBase: PlanoBase[] = [
     {
-      id: 2,
+      id: 1,
       name: "Plano Ultra",
       speed: "500",
       apps: [
@@ -53,36 +53,37 @@ export default function PlanosResidenciais() {
       ],
     },
     {
-      id: 3,
-      name: "Plano Ultra",
-      speed: "600",
+      id: 2,
+      name: "MÊS DO CLIENTE",
+      speed: "800",
       apps: [
-        { image: "/images/SportTv.png" },
-        { image: "/images/Multishow.png" },
+        { image: "/images/Paramount.png" },
+        { image: "/images/Band News.png" },
+        { image: "/images/Bandsports.png" },
         { image: "/images/Globo.png" },
-        { image: "/images/Gnt.png" },
+        { image: "/images/Cnn.png" },
       ],
-      value: "119,90",
+      value: "99,90",
       beneficios: [
         {
           icon: "mdi:wifi",
-          text: "Super Wi-Fi 6",
+          text: "SUPER WIFI 6",
           imagePath: "/images/wifi.svg",
         },
         {
           icon: "mdi:television",
-          text: "TV WATCH Pacote HUB Sports",
+          text: "TV WATCH Pacote UP-CINEMA",
           imagePath: "/images/tv.svg",
         },
         {
           icon: "mdi:netflix",
-          text: "HBO Max por mais R$15,00",
-          imagePath: "/images/max.png",
+          text: "Streaming Paramount+ (1 ano gratuito)",
+          imagePath: "/images/Paramount.png",
         },
       ],
     },
     {
-      id: 1,
+      id: 3,
       name: "Plano Ultra",
       speed: "1000",
       apps: [
@@ -159,25 +160,25 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
     );
 
   const cardBgColor =
-    planoBase.speed === "600" ? "bg-[#ff6600]" : "bg-[#4605bc]";
+    planoBase.speed === "800" ? "bg-[#ff6600]" : "bg-[#4605bc]";
   const cardBorderHover =
-    planoBase.speed === "600"
+    planoBase.speed === "800"
       ? "hover:border-[#4605bc]"
       : "hover:border-[#FF6600]";
   const cornerBgHover =
-    planoBase.speed === "600"
+    planoBase.speed === "800"
       ? "group-hover:bg-[#4605bc]"
       : "group-hover:bg-[#FF6600]";
   const cornerTextHover =
-    planoBase.speed === "600" ? "group-hover:text-white" : "";
+    planoBase.speed === "800" ? "group-hover:text-white" : "";
   const buttonBgColor =
-    planoBase.speed === "600" ? "bg-[#4605bc]" : "bg-[#FF6600]";
+    planoBase.speed === "800" ? "bg-[#4605bc]" : "bg-[#FF6600]";
   const appsImage =
-    planoBase.speed === "600"
+    planoBase.speed === "800"
       ? "/images/maisplano.svg"
       : "/images/maisplanos.svg";
   const iconBgColor =
-    planoBase.speed === "600" ? "bg-[#4605bc]" : "bg-[#FF6600]";
+    planoBase.speed === "800" ? "bg-[#4605bc]" : "bg-[#FF6600]";
 
   return (
     <>
@@ -185,18 +186,18 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
         <div
           className={`w-[22rem] px-8 border-2 hover:-translate-y-1 hover:duration-500 group ${cardBorderHover} duration-600 py-7 flex flex-col ${cardBgColor} border-white relative rounded-3xl`}
         >
-          {planoBase.speed === "600" && (
+          {planoBase.speed === "800" && (
             <div
               className={`bg-white py-2 ${cornerBgHover} duration-500 absolute right-0 top-0 rounded-tr-2xl rounded-bl-3xl px-6`}
             >
               <p
                 className={`text-[#4605bc] uppercase font-bold text-sm ${cornerTextHover}`}
               >
-                ESPECIAL MÊS DOS PAIS
+                MÊS DO CLIENTE
               </p>
             </div>
           )}
-          {planoBase.speed !== "600" && (
+          {planoBase.speed !== "800" && (
             <div
               className={`bg-white py-2 ${cornerBgHover} duration-500 absolute right-0 top-0 rounded-tr-2xl rounded-bl-3xl px-6`}
             >
@@ -215,7 +216,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
             <span className="text-6xl text-white">{planoBase.speed}</span>
             <span
               className={
-                planoBase.speed === "600"
+                planoBase.speed === "800"
                   ? "text-[#4605bc] font-bold"
                   : "text-[#FF6600] font-bold"
               }
@@ -292,6 +293,16 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
               <>
                 <br />
                 Paramount por 1 ano grátis
+              </>
+            )}
+            {planoBase.speed === "800" && (
+              <>
+                <br />
+                Paramount+ por 1 ano grátis
+                <br />
+                HBO MAX por mais R$ 15,00/mês*
+                <br />
+                Válido o mês de Setembro
               </>
             )}
           </p>
