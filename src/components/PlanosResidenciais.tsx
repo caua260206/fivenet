@@ -18,6 +18,8 @@ interface PlanoBase {
   apps: App[];
   value: string;
   beneficios: Beneficio[];
+  comboId: string;
+  comboDescription: string;
 }
 
 export default function PlanosResidenciais() {
@@ -25,36 +27,32 @@ export default function PlanosResidenciais() {
     {
       id: 1,
       name: "Plano Ultra",
-      speed: "500",
+      speed: "600",
       apps: [
-        { image: "/images/Paramount.png" },
-        { image: "/images/Band News.png" },
-        { image: "/images/Bandsports.png" },
+        { image: "/images/SportTv.png" },
+        { image: "/images/Multishow.png" },
         { image: "/images/Globo.png" },
-        { image: "/images/Cnn.png" },
+        { image: "/images/Gnt.png" },
       ],
-      value: "99,90",
+      value: "119,90",
       beneficios: [
         {
           icon: "mdi:wifi",
-          text: "Super Wi-Fi",
+          text: "SUPER WIFI 6",
           imagePath: "/images/wifi.svg",
         },
         {
           icon: "mdi:television",
-          text: "TV WATCH Pacote UP-CINEMA",
+          text: "TV WATCH Pacote HUB Sports",
           imagePath: "/images/tv.svg",
         },
-        {
-          icon: "mdi:netflix",
-          text: "HBO Max por mais R$15,00",
-          imagePath: "/images/max.png",
-        },
       ],
+      comboId: "(ID 0825-1)",
+      comboDescription: "COMBO - Internet 600Mb com WI-FI 6 + TV Hub Sports",
     },
     {
       id: 2,
-      name: "MÊS DO CLIENTE",
+      name: "Mês do Cliente",
       speed: "800",
       apps: [
         { image: "/images/Paramount.png" },
@@ -81,6 +79,8 @@ export default function PlanosResidenciais() {
           imagePath: "/images/Paramount.png",
         },
       ],
+      comboId: "(ID 0925-1)",
+      comboDescription: "COMBO - Internet 800Mb WI-FI 6 + TV UP-Cinema + Paramount+",
     },
     {
       id: 3,
@@ -110,6 +110,8 @@ export default function PlanosResidenciais() {
           imagePath: "/images/max.png",
         },
       ],
+      comboId: "(ID 2025.3.2)",
+      comboDescription: "COMBO - Internet 1 Giga com WI-FI 6 + TV Hub Cinema",
     },
   ];
 
@@ -141,8 +143,12 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
           "O Super Wi-Fi oferece um roteador de última geração com tecnologia avançada de distribuição de sinal, garantindo cobertura completa em todos os cômodos da sua residência. Ideal para múltiplos dispositivos conectados ao mesmo tempo, sem quedas de conexão ou perda de velocidade.",
         "Super Wi-Fi 6":
           "Com o Super Wi-Fi 6, você terá acesso à tecnologia mais moderna em redes sem fio, com maior velocidade de transferência de dados, menor latência e mais estabilidade mesmo em ambientes com muitos dispositivos conectados simultaneamente. Perfeito para casas inteligentes e gamers exigentes.",
+        "SUPER WIFI 6":
+          "Com o SUPER WIFI 6, você terá acesso à tecnologia mais moderna em redes sem fio, com maior velocidade de transferência de dados, menor latência e mais estabilidade mesmo em ambientes com muitos dispositivos conectados simultaneamente. Perfeito para casas inteligentes e gamers exigentes.",
         "HBO Max por mais R$15,00":
           "Tenha acesso ao catálogo completo da HBO Max com um acréscimo de apenas R$15,00 por mês. Aproveite filmes recentes, séries exclusivas, conteúdo infantil e documentários renomeados em uma das plataformas de streaming mais populares do mundo.",
+        "Streaming Paramount+ (1 ano gratuito)":
+          "Tenha acesso ao catálogo completo do Paramount+ por 1 ano gratuito. Aproveite filmes, séries exclusivas, conteúdo infantil e muito mais em uma das principais plataformas de streaming do mundo.",
       };
       setModalContent({
         text:
@@ -209,9 +215,17 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
             </div>
           )}
 
-          <p className="font-bold text-white text-2xl max-lg:mt-7">
-            {planoBase.name}
-          </p>
+          <div className="max-lg:mt-7">
+            <p className="text-white text-sm font-bold mb-1">
+              {planoBase.comboId}
+            </p>
+            <p className="text-white text-xs mb-2 leading-tight">
+              {planoBase.comboDescription}
+            </p>
+            <p className="font-bold text-white text-2xl">
+              {planoBase.name}
+            </p>
+          </div>
           <p className="text-[#FF6600] font-bold text-4xl mt-2">
             <span className="text-6xl text-white">{planoBase.speed}</span>
             <span
@@ -289,10 +303,10 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
 
           <p className="text-center font-light text-sm text-white -mt-3 leading-tight">
             Consulte condições e viabilidade
-            {planoBase.speed === "500" && (
+            {planoBase.speed === "600" && (
               <>
                 <br />
-                Paramount por 1 ano grátis
+                *HBO MAX se refere ao Plano Standard
               </>
             )}
             {planoBase.speed === "800" && (
