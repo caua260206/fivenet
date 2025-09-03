@@ -19,7 +19,6 @@ interface PlanoBase {
   value: string;
   beneficios: Beneficio[];
   comboId: string;
-  comboDescription: string;
 }
 
 export default function PlanosResidenciais() {
@@ -48,7 +47,6 @@ export default function PlanosResidenciais() {
         },
       ],
       comboId: "(ID 0825-1)",
-      comboDescription: "COMBO - Internet 600Mb com WI-FI 6 + TV Hub Sports",
     },
     {
       id: 2,
@@ -80,7 +78,6 @@ export default function PlanosResidenciais() {
         },
       ],
       comboId: "(ID 0925-1)",
-      comboDescription: "COMBO - Internet 800Mb WI-FI 6 + TV UP-Cinema + Paramount+",
     },
     {
       id: 3,
@@ -111,7 +108,6 @@ export default function PlanosResidenciais() {
         },
       ],
       comboId: "(ID 2025.3.2)",
-      comboDescription: "COMBO - Internet 1 Giga com WI-FI 6 + TV Hub Cinema",
     },
   ];
 
@@ -218,9 +214,6 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
           <div className="max-lg:mt-7">
             <p className="text-white text-sm font-bold mb-1">
               {planoBase.comboId}
-            </p>
-            <p className="text-white text-xs mb-2 leading-tight">
-              {planoBase.comboDescription}
             </p>
             <p className="font-bold text-white text-2xl">
               {planoBase.name}
