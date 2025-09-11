@@ -215,9 +215,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
             <p className="text-white text-sm font-bold mb-1">
               {planoBase.comboId}
             </p>
-            <p className="font-bold text-white text-2xl">
-              {planoBase.name}
-            </p>
+            <p className="font-bold text-white text-2xl">{planoBase.name}</p>
           </div>
           <p className="text-[#FF6600] font-bold text-4xl mt-2">
             <span className="text-6xl text-white">{planoBase.speed}</span>
@@ -274,13 +272,7 @@ const PlanoCard = ({ planoBase }: { planoBase: PlanoBase }) => {
           </p>
 
           <div className="flex justify-center items-center my-6">
-            <a
-              href={`https://api.whatsapp.com/send?phone=5511975358300&text=${getWhatsAppMessage(
-                planoBase.speed
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="/assine-rapido">
               <button
                 className={`${buttonBgColor} hover:bg-[#001256] duration-300 text-1xl flex flex-row items-center py-3 px-10 gap-3 rounded-full text-white font-bold`}
               >
