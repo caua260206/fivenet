@@ -3,31 +3,31 @@
 @tailwind utilities;
 
 @theme {
-  --color-primary: #ff7900;
-  --color-secondary: #001256;
+  --color-primary: #2c3793;
+  --color-secondary: #0052d1;
 }
 
 @layer base {
   @font-face {
-    font-family: 'Causten';
-    src: url("/fonts/Causten-Bold.otf") format("opentype");
+    font-family: "UniNeue";
+    src: url("/fonts/UniNeueBold.otf") format("opentype");
     font-weight: bold;
   }
   @font-face {
-    font-family: 'Causten';
-    src: url("/fonts/Causten-Light.otf") format("opentype");
+    font-family: "UniNeue";
+    src: url("/fonts/UniNeueHeavy.otf") format("opentype");
     font-weight: 200;
   }
   @font-face {
-    font-family: 'Causten';
-    src: url("/fonts/Causten-Regular.otf") format("opentype");
+    font-family: "UniNeue";
+    src: url("/fonts/UniNeueRegular.otf") format("opentype");
     font-weight: normal;
   }
 }
 
 :root {
-  --color-primary: #ff7900;
-  --color-secondary: #001256;
+  --color-primary: #2c3793;
+  --color-secondary: #0052d1;
 }
 
 * {
@@ -35,9 +35,8 @@
 }
 
 body {
-  font-family: 'Causten', 'OpenSans';
+  font-family: "UniNeue", sans-serif;
   box-sizing: border-box;
-  background-image: url('/images/Background.png');
   color: white;
 }
 
