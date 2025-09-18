@@ -21,8 +21,8 @@ export default function Planos() {
   };
 
   return (
-    <div className="bg-[#2b3690] py-20 px-8">
-      <div className="max-w-8xl mx-auto bg-white rounded-3xl p-8">
+    <div className="bg-[#2b3690] py-20 px-10">
+      <div className="mx-auto bg-white rounded-3xl p-8">
         <h1 className="text-[#004aad] text-5xl max-lg:text-4xl font-bold text-center mb-10 max-lg:mb-5">
           Escolha seu plano
         </h1>
