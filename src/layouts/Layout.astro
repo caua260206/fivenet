@@ -1,5 +1,6 @@
 ---
 import '@/styles/global.css';
+import Header from '@/partials/Header';
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import '@/styles/global.css';
 		<title>Fivenet - A internet 5 estrelas</title>
 	</head>
 	<body>
+		<Header client:load />
 		<slot />
 	</body>
 </html>
